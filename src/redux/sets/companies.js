@@ -38,7 +38,6 @@ companies.actions.asyncFetchCompanies = data => async dispatch => {
 
   const [error2, responseBody] = await to(response.json());
   if (error2) return dispatch(companies.actions.fetchFailureCompanies(error2));
-  console.log(responseBody);
 
   dispatch(companies.actions.fetchSuccessCompanies());
   dispatch(companies.actions.setCompanies(responseBody));

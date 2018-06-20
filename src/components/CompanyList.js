@@ -1,4 +1,6 @@
 import React from 'react';
+import idx from 'idx';
+
 import redux from '../redux';
 
 // @redux()
@@ -7,11 +9,25 @@ export class CompanyList extends React.PureComponent {
     this.props.asyncFetchCompanies();
   }
 
-  render() {
-    console.log(this.props.companies.state);
+  renderItem = (item) => {
     return (
-      <div style={{ backgroundColor: 'white' }}>
+      <div className="company">
+        <img src={item.image} alt="company image" />
+        <div>{item.name}</div>
+        <div>{item.location}</div>
+      </div>
+    );
+  }
+
+  render() {
+    const companies = idx(this.props.companies, _ => _.data.results) || [];
+
+    return (
+      <div>
         <h1>Company List</h1>
+        <div className="companies">
+          {companies.map(this.renderItem)}
+        </div>
       </div>
     );
   }
