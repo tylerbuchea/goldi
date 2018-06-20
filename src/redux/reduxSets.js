@@ -5,12 +5,12 @@ import { camelCase, merge } from 'lodash';
  * @param {*} reducerCases
  * @param {*} initialState
  */
-export function createSet(reducerCases, initialState = []) {
+export function createSet(reducerCases, initialState = {}) {
   const typesArray = Object.keys(reducerCases);
   const { actions, types } = typesArray.reduce((accumulator, type) => {
     const types = createType(type);
     const actions = createAction(type);
-    return merge({}, accumulator, { types, actions });
+    return merge(accumulator, { types, actions });
   }, {});
   const reducers = createReducer(reducerCases, initialState);
 
@@ -41,7 +41,7 @@ export function createAction(type) {
  * @param {*} proto
  * @param {*} initialState
  */
-export function createReducer(proto, initialState = []) {
+export function createReducer(proto, initialState = {}) {
   function reducer(state = initialState, action) {
     return this[action.type] ? this[action.type](state, action) : state;
   }
