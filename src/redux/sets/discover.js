@@ -35,7 +35,7 @@ const discover = createSet(
 discover.actions.asyncFetchDiscover = data => async dispatch => {
   dispatch(discover.actions.fetchRequestDiscover());
 
-  const url = `${API_URL}/discover/discover_list`;
+  const url = `/discover`;
   const [error1, response] = await to(fetch(url));
   if (error1) return dispatch(discover.actions.fetchFailureDiscover(error1));
 

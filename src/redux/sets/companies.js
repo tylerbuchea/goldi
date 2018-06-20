@@ -35,12 +35,13 @@ const companies = createSet(
 companies.actions.asyncFetchCompanies = data => async dispatch => {
   dispatch(companies.actions.fetchRequestCompanies());
 
-  const url = `${API_URL}/company/company_list`;
+  const url = `/company`;
   const [error1, response] = await to(fetch(url));
   if (error1) return dispatch(companies.actions.fetchFailureCompanies(error1));
 
-  const [error2, responseBody] = await to(response.json());
+  const [error2, responseBody] = await to(response.text());
   if (error2) return dispatch(companies.actions.fetchFailureCompanies(error2));
+  console.log(responseBody);
 
   dispatch(companies.actions.fetchSuccessCompanies());
   dispatch(companies.actions.setCompanies(responseBody));

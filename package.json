@@ -43,5 +43,6 @@
       "prettier --write --single-quote --trailing-comma es5",
       "git add"
     ]
-  }
+  },
+  "proxy": "https://dev-api.gldi.co/api/v1"
 }

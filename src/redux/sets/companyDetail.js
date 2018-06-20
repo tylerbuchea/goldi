@@ -35,7 +35,7 @@ const companyDetail = createSet(
 companyDetail.actions.asyncFetchCompanyDetail = data => async dispatch => {
   dispatch(companyDetail.actions.fetchRequestCompanyDetail());
 
-  const url = `${API_URL}/company/company_read`;
+  const url = `/company/${data.id}`;
   const [error1, response] = await to(fetch(url));
   if (error1) return dispatch(companyDetail.actions.fetchFailureCompanyDetail(error1));
 
