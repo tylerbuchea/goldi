@@ -1,13 +1,10 @@
 import { merge } from 'lodash';
 import { to } from 'await-to-js';
 
-import constants from '../../utils/constants';
 import { createSet } from '../reduxSets';
 
-const { API_URL } = constants;
-
 const initialState = {
-  data: [],
+  data: {},
   state: { loading: false, error: false, success: false },
 };
 
@@ -39,7 +36,7 @@ companies.actions.asyncFetchCompanies = data => async dispatch => {
   const [error1, response] = await to(fetch(url));
   if (error1) return dispatch(companies.actions.fetchFailureCompanies(error1));
 
-  const [error2, responseBody] = await to(response.text());
+  const [error2, responseBody] = await to(response.json());
   if (error2) return dispatch(companies.actions.fetchFailureCompanies(error2));
   console.log(responseBody);
 

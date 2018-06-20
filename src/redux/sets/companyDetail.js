@@ -1,10 +1,7 @@
 import { merge } from 'lodash';
 import { to } from 'await-to-js';
 
-import constants from '../../utils/constants';
 import { createSet } from '../reduxSets';
-
-const { API_URL } = constants;
 
 const initialState = {
   data: {},
