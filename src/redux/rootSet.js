@@ -15,7 +15,7 @@ const sets = {
   lockup,
 };
 
-const mutatedSets = Object
+const { types, actions, reducers } = Object
   .keys(sets)
   .reduce((accumulator, key) => {
     const { types, actions } = sets[key];
@@ -28,9 +28,9 @@ const mutatedSets = Object
   }, {});
 
 const rootSet = {
-  types: mutatedSets.types,
-  actions: mutatedSets.actions,
-  reducers: combineReducers(mutatedSets.reducers),
+  types,
+  actions,
+  reducers: combineReducers(reducers),
 };
 
 export default rootSet;
