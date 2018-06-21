@@ -19,9 +19,11 @@ const root = () => (
       </ul>
 
       <hr/>
-      <Route exact path="/" component={DiscoverFeedContainer} />
-      <Route path="/companies" component={CompanyListContainer} />
-      <Route path="/companies/:id" component={CompanyDetailContainer} />
+      <div className="section">
+        <Route exact path="/" component={DiscoverFeedContainer} />
+        <Route path="/companies" component={CompanyListContainer} />
+        <Route path="/companies/:id" component={CompanyDetailContainer} />
+      </div>
     </div>
   </Router>
 );
