@@ -15,7 +15,7 @@ export class CompanyList extends React.PureComponent {
         <div className="card">
           <div className="card-image">
             <figure className="image is-4by3">
-              <img src={company.image} alt="company" />
+              <img src={company.video_still} alt="company" />
             </figure>
           </div>
           <div className="card-content">
@@ -36,7 +36,7 @@ export class CompanyList extends React.PureComponent {
               Phasellus nec iaculis mauris. <a>@bulmaio</a>.
               <a href="google.com">#css</a> <a href="google.com">#responsive</a>
               <br />
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+              <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
             </div>
           </div>
         </div>
