@@ -18,12 +18,12 @@ const sets = {
 const { types, actions, reducers } = Object
   .keys(sets)
   .reduce((accumulator, key) => {
-    const { types, actions } = sets[key];
+    const { types, actions, reducers } = sets[key];
 
     return merge(accumulator, {
       types,
       actions,
-      reducers: { [key]: sets[key].reducers },
+      reducers: { [key]: reducers },
     });
   }, {});
 

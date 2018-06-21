@@ -25,6 +25,7 @@ export default class Nav extends React.PureComponent {
                     data-social-action="tweet"
                     data-social-target="https://goldi.com"
                     target="_blank"
+                    rel="noopener noreferrer"
                     href="https://twitter.com/intent/tweet?text=Checkout goldi video job search&amp;hashtags=goldi&amp;url=https://goldi.com&amp;via=jgthms"
                   >
                     <span className="icon">
@@ -38,6 +39,7 @@ export default class Nav extends React.PureComponent {
                     className="button is-primary"
                     href="https://itunes.apple.com/us/app/goldi-video-job-search/id1246991071?ls=111&mt=888"
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <span className="icon">
                       <i className="fas fa-download"></i>
