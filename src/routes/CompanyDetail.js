@@ -6,6 +6,7 @@ import redux from '../redux';
 // @redux()
 export class CompanyDetail extends React.PureComponent {
   componentDidMount() {
+    console.log(this.props);
     // this.props.asyncFetchCompanyDetail({ id });
   }
 

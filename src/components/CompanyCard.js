@@ -1,15 +1,9 @@
 import React from 'react';
-import idx from 'idx';
 
-import redux from '../redux';
+export default class CompanyCard extends React.PureComponent {
+  render() {
+    const { company } = this.props;
 
-// @redux()
-export class CompanyList extends React.PureComponent {
-  componentDidMount() {
-    this.props.asyncFetchCompanies();
-  }
-
-  renderItem = company => {
     return (
       <div className="tile" key={company.id}>
         <div className="card">
@@ -43,19 +37,4 @@ export class CompanyList extends React.PureComponent {
       </div>
     );
   }
-
-  render() {
-    const companies = idx(this.props.companies, _ => _.data.results) || [];
-
-    return (
-      <div className="container">
-        <h1>Company List</h1>
-        <div className="companies tile is-ancestor">
-          {companies.map(this.renderItem)}
-        </div>
-      </div>
-    );
-  }
 }
-
-export default redux()(CompanyList);
