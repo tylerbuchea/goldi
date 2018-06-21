@@ -16,7 +16,7 @@ export default class CompanyDetail extends React.PureComponent {
     if (!companyDetail) return null;
     return (
       <div className="container">
-        <h1>Company Detail</h1>
+        <h1 className="title">Company Detail</h1>
         <img src={companyDetail.image} alt="company" />
         <div>{companyDetail.name}</div>
         <div>{companyDetail.location}</div>

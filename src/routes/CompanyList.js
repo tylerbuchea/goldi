@@ -17,7 +17,7 @@ export default class CompanyList extends React.PureComponent {
 
     return (
       <div className="container">
-        <h1>Company List</h1>
+        <h1 className="title">Browse</h1>
         <div className="companies tile is-ancestor">
           {companies.map(this.renderItem)}
         </div>

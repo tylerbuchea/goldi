@@ -8,7 +8,7 @@ export default class DiscoverFeed extends React.PureComponent {
   render() {
     return (
       <div className="container">
-        <h1>Discover Feed</h1>
+        <h1 className="title">Discover</h1>
       </div>
     );
   }
