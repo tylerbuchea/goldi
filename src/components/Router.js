@@ -6,14 +6,14 @@ import {
   Link
 } from 'react-router-dom'
 
-import DiscoverFeedContainer from './DiscoverFeedContainer';
-import CompanyListContainer from './CompanyListContainer';
-import CompanyDetailContainer from './CompanyDetailContainer';
+import DiscoverFeed from './DiscoverFeed';
+import CompanyList from './CompanyList';
+import CompanyDetail from './CompanyDetail';
 
 const root = () => (
   <Router>
     <div>
-      <nav className="navbar">
+      <nav className="navbar has-shadow is-spaced">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
             <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
@@ -32,11 +32,10 @@ const root = () => (
         </div>
       </nav>
 
-      <hr/>
       <div className="section">
-        <Route exact path="/" component={DiscoverFeedContainer} />
-        <Route path="/companies" component={CompanyListContainer} />
-        <Route path="/companies/:id" component={CompanyDetailContainer} />
+        <Route exact path="/" component={DiscoverFeed} />
+        <Route path="/companies" component={CompanyList} />
+        <Route path="/companies/:id" component={CompanyDetail} />
       </div>
     </div>
   </Router>

@@ -1,5 +1,5 @@
 import React from 'react';
-import RootProvider from './routes/RootProvider';
+import RootProvider from './components/RootProvider';
 
 export default class App extends React.PureComponent {
   render() {
