@@ -13,10 +13,19 @@ import CompanyDetailContainer from './CompanyDetailContainer';
 const root = () => (
   <Router>
     <div>
-      <ul>
+      {/* <ul>
         <li><Link to="/">Discover</Link></li>
         <li><Link to="/companies">Browse</Link></li>
-      </ul>
+      </ul> */}
+      <nav className="navbar">
+        <div className="navbar-start">
+          <a className="navbar-item" href="https://bulma.io/">
+            Home
+          </a>
+          <Link to="/" className="navbar-item">Discover</Link>
+          <Link to="/companies" className="navbar-item">Companies</Link>
+        </div>
+      </nav>
 
       <hr/>
       <div className="section">
