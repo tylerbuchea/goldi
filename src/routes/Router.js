@@ -16,8 +16,8 @@ const root = () => (
       <Nav />
       <div className="section">
         <Route exact path="/" component={DiscoverFeed} />
-        <Route path="/companies" component={CompanyList} />
-        <Route path="/companies/:id" component={CompanyDetail} />
+        <Route path="/company" component={CompanyList} />
+        <Route path="/company/:id" component={CompanyDetail} />
       </div>
     </div>
   </Router>

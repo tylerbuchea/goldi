@@ -4,8 +4,8 @@ import idx from 'idx';
 import redux from '../redux';
 import CompanyCard from '../components/CompanyCard';
 
-// @redux()
-export class CompanyList extends React.PureComponent {
+@redux()
+export default class CompanyList extends React.PureComponent {
   componentDidMount() {
     this.props.asyncFetchCompanies();
   }
@@ -25,5 +25,3 @@ export class CompanyList extends React.PureComponent {
     );
   }
 }
-
-export default redux()(CompanyList);

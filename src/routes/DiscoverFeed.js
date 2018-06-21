@@ -3,8 +3,8 @@ import React from 'react';
 
 import redux from '../redux';
 
-// @redux()
-export class DiscoverFeed extends React.PureComponent {
+@redux()
+export default class DiscoverFeed extends React.PureComponent {
   render() {
     return (
       <div className="container">
@@ -13,5 +13,3 @@ export class DiscoverFeed extends React.PureComponent {
     );
   }
 }
-
-export default redux()(DiscoverFeed);

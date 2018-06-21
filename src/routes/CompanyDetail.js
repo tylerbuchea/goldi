@@ -3,16 +3,17 @@ import idx from 'idx';
 
 import redux from '../redux';
 
-// @redux()
-export class CompanyDetail extends React.PureComponent {
+@redux()
+export default class CompanyDetail extends React.PureComponent {
   componentDidMount() {
-    console.log(this.props);
-    // this.props.asyncFetchCompanyDetail({ id });
+    const id = idx(this.props.match, _ => _.params.id);
+    this.props.asyncFetchCompanyDetail({ id });
   }
 
   render() {
     const companyDetail = idx(this.props.companyDetail, _ => _.data.results);
-
+    
+    if (!companyDetail) return null;
     return (
       <div className="container">
         <h1>Company Detail</h1>
@@ -23,5 +24,3 @@ export class CompanyDetail extends React.PureComponent {
     );
   }
 }
-
-export default redux()(CompanyDetail);
