@@ -13,17 +13,22 @@ import CompanyDetailContainer from './CompanyDetailContainer';
 const root = () => (
   <Router>
     <div>
-      {/* <ul>
-        <li><Link to="/">Discover</Link></li>
-        <li><Link to="/companies">Browse</Link></li>
-      </ul> */}
       <nav className="navbar">
-        <div className="navbar-start">
-          <a className="navbar-item" href="https://bulma.io/">
-            Home
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://bulma.io">
+            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
           </a>
-          <Link to="/" className="navbar-item">Discover</Link>
-          <Link to="/companies" className="navbar-item">Companies</Link>
+          <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="navbar-menu">
+          <div className="navbar-start">
+            <Link to="/" className="navbar-item">Discover</Link>
+            <Link to="/companies" className="navbar-item">Companies</Link>
+          </div>
         </div>
       </nav>
 
