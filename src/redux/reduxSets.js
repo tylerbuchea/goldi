@@ -47,3 +47,39 @@ export function createReducer(proto, initialState = {}) {
   }
   return reducer.bind(proto);
 }
+
+/**
+ * Create Async Superset
+ * @param {*} suffix 
+ */
+export function createAsyncSuperset(suffix) {
+  const upper = suffix.toUpperCase();
+
+  return {
+    [`ASYNC_REQUEST_${upper}`]: (state, action) => ({
+      ...state,
+      state: {
+        loading: true,
+        error: false,
+        success: false,
+      }
+    }),
+    [`ASYNC_FAILURE_${upper}`]: (state, action) => ({
+      ...state,
+      state: {
+        loading: false,
+        error: true,
+        success: false,
+        message: action.payload,
+      }
+    }),
+    [`ASYNC_SUCCESS_${upper}`]: (state, action) => ({
+      ...state,
+      state: {
+        loading: false,
+        error: false,
+        success: true,
+      }
+    }),
+  }
+}
