@@ -5,7 +5,7 @@ export default class CompanyCard extends React.PureComponent {
     const { company } = this.props;
 
     return (
-      <div className="tile" key={company.id}>
+      <div className="tile">
         <div className="card">
           <div className="card-image">
             <figure className="image is-4by3">

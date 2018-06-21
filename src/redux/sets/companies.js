@@ -32,7 +32,7 @@ const companies = createSet(
 companies.actions.asyncFetchCompanies = data => async dispatch => {
   dispatch(companies.actions.fetchRequestCompanies());
 
-  const url = `/company`;
+  const url = `/api/v1/company`;
   const [error1, response] = await to(fetch(url));
   if (error1) return dispatch(companies.actions.fetchFailureCompanies(error1));
 

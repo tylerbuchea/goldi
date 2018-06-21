@@ -10,7 +10,12 @@ export default class CompanyList extends React.PureComponent {
     this.props.asyncFetchCompanies();
   }
 
-  renderItem = company => <CompanyCard company={company} />
+  renderItem = company => (
+    <CompanyCard
+      key={company.id}
+      company={company}
+    />
+  )
 
   render() {
     const companies = idx(this.props.companies, _ => _.data.results) || [];
