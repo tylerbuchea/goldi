@@ -50,7 +50,7 @@ export function createReducer(proto, initialState = {}) {
 
 /**
  * Create Async Superset
- * @param {*} suffix 
+ * @param {*} suffix
  */
 export function createAsyncSuperset(suffix) {
   const upper = suffix.toUpperCase();
@@ -62,7 +62,8 @@ export function createAsyncSuperset(suffix) {
         loading: true,
         error: false,
         success: false,
-      }
+        loaded: false,
+      },
     }),
     [`ASYNC_FAILURE_${upper}`]: (state, action) => ({
       ...state,
@@ -70,8 +71,9 @@ export function createAsyncSuperset(suffix) {
         loading: false,
         error: true,
         success: false,
+        loaded: true,
         message: action.payload,
-      }
+      },
     }),
     [`ASYNC_SUCCESS_${upper}`]: (state, action) => ({
       ...state,
@@ -79,7 +81,8 @@ export function createAsyncSuperset(suffix) {
         loading: false,
         error: false,
         success: true,
-      }
+        loaded: true,
+      },
     }),
-  }
+  };
 }

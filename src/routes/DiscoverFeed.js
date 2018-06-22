@@ -17,13 +17,21 @@ export default class DiscoverFeed extends React.PureComponent {
   );
 
   render() {
-    const companies = idx(this.props.discover, _ => _.data.results) || [];
+    const { discover } = this.props;
+    const discoverList = idx(discover, _ => _.data.results) || [];
+    const hasLoaded = discover.state.loaded;
 
     return (
       <div className="container">
-        <h1 className="title">Discover</h1>
+        <h1 className="title">
+          Browse &nbsp;
+          {hasLoaded || <div className="fas fa-spinner fa-spin" />}
+        </h1>
         <div className="companies" style={styles.grid}>
-          {companies.map(this.renderItem)}
+          {discoverList.map(this.renderItem)}
+          {discover.state.error && (
+            <h2>There was an issue retrieving listings.</h2>
+          )}
         </div>
       </div>
     );

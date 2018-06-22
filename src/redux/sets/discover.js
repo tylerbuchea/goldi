@@ -5,7 +5,12 @@ import { createSet } from '../reduxSets';
 
 const initialState = {
   data: {},
-  state: { loading: false, error: false, success: false },
+  state: {
+    loading: false,
+    error: false,
+    success: false,
+    loaded: false,
+  },
 };
 
 const discover = createSet(
@@ -18,7 +23,12 @@ const discover = createSet(
     CLEAR_DISCOVER: (state, action) => initialState,
     FETCH_REQUEST_DISCOVER: (state, action) => ({
       ...state,
-      state: { loading: true, error: false, success: false },
+      state: {
+        loading: true,
+        error: false,
+        success: false,
+        loaded: false,
+      },
     }),
     FETCH_FAILURE_DISCOVER: (state, action) => ({
       ...state,
@@ -26,12 +36,18 @@ const discover = createSet(
         loading: true,
         error: false,
         success: false,
+        loaded: true,
         message: action.payload,
       },
     }),
     FETCH_SUCCESS_DISCOVER: (state, action) => ({
       ...state,
-      state: { loading: true, error: false, success: false },
+      state: {
+        loading: true,
+        error: false,
+        success: false,
+        loaded: true,
+      },
     }),
   },
   initialState

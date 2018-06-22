@@ -5,7 +5,12 @@ import { createSet } from '../reduxSets';
 
 const initialState = {
   data: {},
-  state: { loading: false, error: false, success: false },
+  state: {
+    loading: false,
+    error: false,
+    success: false,
+    loaded: false,
+  },
 };
 
 const companies = createSet(
@@ -19,7 +24,12 @@ const companies = createSet(
     CLEAR_COMPANIES: (state, action) => initialState,
     FETCH_REQUEST_COMPANIES: (state, action) => ({
       ...state,
-      state: { loading: true, error: false, success: false },
+      state: {
+        loading: true,
+        error: false,
+        success: false,
+        loaded: false,
+      },
     }),
     FETCH_FAILURE_COMPANIES: (state, action) => ({
       ...state,
@@ -27,12 +37,18 @@ const companies = createSet(
         loading: false,
         error: true,
         success: false,
+        loaded: true,
         message: action.payload,
       },
     }),
     FETCH_SUCCESS_COMPANIES: (state, action) => ({
       ...state,
-      state: { loading: false, error: false, success: true },
+      state: {
+        loading: false,
+        error: false,
+        success: true,
+        loaded: true,
+      },
     }),
   },
   initialState
@@ -49,7 +65,11 @@ companies.actions.asyncFetchCompanies = () => async dispatch => {
   if (error2) return dispatch(companies.actions.fetchFailureCompanies(error2));
 
   const goodCompanies = responseBody.results.filter(
-    company => company.video_id && company.is_visible && company.is_active
+    company =>
+      company.video_still &&
+      company.video_id &&
+      company.is_visible &&
+      company.is_active
   );
   responseBody.results = goodCompanies;
   dispatch(companies.actions.fetchSuccessCompanies());
