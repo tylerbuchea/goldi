@@ -19,13 +19,12 @@ export default class CompanyList extends React.PureComponent {
   render() {
     const { companies } = this.props;
     const companiesList = idx(companies, _ => _.data.results) || [];
-    const hasLoaded = companies.state.loaded;
 
     return (
       <div className="container">
         <h1 className="title">
           Browse &nbsp;
-          {hasLoaded || <div className="fas fa-spinner fa-spin" />}
+          {companies.state.loaded || <div className="fas fa-spinner fa-spin" />}
         </h1>
         <div className="companies" style={styles.grid}>
           {companiesList.map(this.renderItem)}
