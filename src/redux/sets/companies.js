@@ -59,10 +59,14 @@ companies.actions.asyncFetchCompanies = () => async dispatch => {
 
   const url = `/api/v1/company`;
   const [error1, response] = await to(fetch(url));
-  if (error1) return dispatch(companies.actions.fetchFailureCompanies(error1));
+  if (error1) {
+    return dispatch(companies.actions.fetchFailureCompanies(error1));
+  }
 
   const [error2, responseBody] = await to(response.json());
-  if (error2) return dispatch(companies.actions.fetchFailureCompanies(error2));
+  if (error2) {
+    return dispatch(companies.actions.fetchFailureCompanies(error2));
+  }
 
   const goodCompanies = responseBody.results.filter(
     company =>

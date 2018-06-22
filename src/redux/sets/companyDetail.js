@@ -59,12 +59,14 @@ companyDetail.actions.asyncFetchCompanyDetail = data => async dispatch => {
 
   const url = `/api/v1/company/${data.id}`;
   const [error1, response] = await to(fetch(url));
-  if (error1)
+  if (error1) {
     return dispatch(companyDetail.actions.fetchFailureCompanyDetail(error1));
+  }
 
   const [error2, responseBody] = await to(response.json());
-  if (error2)
+  if (error2) {
     return dispatch(companyDetail.actions.fetchFailureCompanyDetail(error2));
+  }
 
   dispatch(companyDetail.actions.fetchSuccessCompanyDetail());
   dispatch(companyDetail.actions.setCompanyDetail(responseBody));
