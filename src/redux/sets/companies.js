@@ -10,26 +10,35 @@ const initialState = {
 
 const companies = createSet(
   {
-    ADD_COMPANIES: (state, action) => merge({}, state, { data: action.payload }),
-    SET_COMPANIES: (state, action) => ({ state: state.state, data: action.payload }),
+    ADD_COMPANIES: (state, action) =>
+      merge({}, state, { data: action.payload }),
+    SET_COMPANIES: (state, action) => ({
+      state: state.state,
+      data: action.payload,
+    }),
     CLEAR_COMPANIES: (state, action) => initialState,
     FETCH_REQUEST_COMPANIES: (state, action) => ({
       ...state,
-      state: { loading: true, error: false, success: false }
+      state: { loading: true, error: false, success: false },
     }),
     FETCH_FAILURE_COMPANIES: (state, action) => ({
       ...state,
-      state: { loading: false, error: true, success: false, message: action.payload }
+      state: {
+        loading: false,
+        error: true,
+        success: false,
+        message: action.payload,
+      },
     }),
     FETCH_SUCCESS_COMPANIES: (state, action) => ({
       ...state,
-      state: { loading: false, error: false, success: true }
+      state: { loading: false, error: false, success: true },
     }),
   },
   initialState
 );
 
-companies.actions.asyncFetchCompanies = data => async dispatch => {
+companies.actions.asyncFetchCompanies = () => async dispatch => {
   dispatch(companies.actions.fetchRequestCompanies());
 
   const url = `/api/v1/company`;
@@ -39,6 +48,10 @@ companies.actions.asyncFetchCompanies = data => async dispatch => {
   const [error2, responseBody] = await to(response.json());
   if (error2) return dispatch(companies.actions.fetchFailureCompanies(error2));
 
+  const goodCompanies = responseBody.results.filter(
+    company => company.video_id && company.is_visible && company.is_active
+  );
+  responseBody.results = goodCompanies;
   dispatch(companies.actions.fetchSuccessCompanies());
   dispatch(companies.actions.setCompanies(responseBody));
 };

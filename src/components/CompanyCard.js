@@ -1,5 +1,7 @@
 import React from 'react';
 
+import VideoPlayer from './VideoPlayer';
+
 export default class CompanyCard extends React.PureComponent {
   render() {
     const { company } = this.props;
@@ -8,9 +10,10 @@ export default class CompanyCard extends React.PureComponent {
       <div className="tile">
         <div className="card">
           <div className="card-image">
-            <figure className="image is-4by3">
-              <img src={company.video_still} alt="company" />
-            </figure>
+            <VideoPlayer
+              videoUrl={company.video_object.binary_url}
+              videoStill={company.video_still}
+            />
           </div>
           <div className="card-content">
             <div className="media">
@@ -26,8 +29,8 @@ export default class CompanyCard extends React.PureComponent {
             </div>
 
             <div className="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+              nec iaculis mauris. <a>@bulmaio</a>.
               <a href="google.com">#css</a> <a href="google.com">#responsive</a>
               <br />
               <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
