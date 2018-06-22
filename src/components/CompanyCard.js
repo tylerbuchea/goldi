@@ -11,7 +11,7 @@ export default class CompanyCard extends React.PureComponent {
         <div className="card">
           <div className="card-image">
             <VideoPlayer
-              videoUrl={company.video_object.binary_url}
+              videoUrl={company.binary}
               videoStill={company.video_still}
             />
           </div>

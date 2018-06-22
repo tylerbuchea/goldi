@@ -23,7 +23,7 @@ export default class DiscoverFeed extends React.PureComponent {
     return (
       <div className="container">
         <h1 className="title">
-          Browse &nbsp;
+          Discover &nbsp;
           {discover.state.loaded || <div className="fas fa-spinner fa-spin" />}
         </h1>
         <div className="companies" style={styles.grid}>
