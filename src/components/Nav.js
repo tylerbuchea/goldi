@@ -12,7 +12,7 @@ export default class Nav extends React.PureComponent {
     return (
       <nav className="navbar has-shadow is-spaced">
         <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
+          <a className="navbar-item" href="https://goldi.com/">
             <svg
               className="logo"
               xmlns="http://www.w3.org/2000/svg"
