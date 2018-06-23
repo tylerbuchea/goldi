@@ -1,6 +1,5 @@
 .video-container {
   position: relative;
-  height: 522px;
 }
 
 .video-container video {
@@ -10,9 +9,6 @@
 }
 
 .video-container figure {
-  position: absolute;
-  top: 0;
-  left: 0;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;

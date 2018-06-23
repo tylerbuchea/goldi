@@ -7,7 +7,7 @@ export default class CompanyCard extends React.PureComponent {
     const { company } = this.props;
 
     return (
-      <div className="tile">
+      <div className="">
         <div className="card">
           <div className="card-image">
             <VideoPlayer
@@ -23,8 +23,10 @@ export default class CompanyCard extends React.PureComponent {
                 </figure>
               </div>
               <div className="media-content">
-                <p className="title is-4">{company.name}</p>
-                <p className="subtitle is-6">{company.location}</p>
+                <p className="title is-4">{company.name || company.title}</p>
+                <p className="subtitle is-6">
+                  {company.location || company.subtitle}
+                </p>
               </div>
             </div>
 

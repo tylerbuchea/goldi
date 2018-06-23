@@ -45,8 +45,8 @@ const styles = {
     justifyContent: 'center',
   },
   gridItem: {
-    flex: '1 1 auto',
-    maxWidth: 300,
+    flex: '0 0 auto',
+    maxWidth: 250,
     margin: 10,
   },
 };
