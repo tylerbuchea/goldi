@@ -34,8 +34,8 @@ const companyDetail = createSet(
     FETCH_FAILURE_COMPANY_DETAIL: (state, action) => ({
       ...state,
       state: {
-        loading: true,
-        error: false,
+        loading: false,
+        error: true,
         success: false,
         loaded: true,
         message: action.payload,
@@ -44,9 +44,9 @@ const companyDetail = createSet(
     FETCH_SUCCESS_COMPANY_DETAIL: (state, action) => ({
       ...state,
       state: {
-        loading: true,
+        loading: false,
         error: false,
-        success: false,
+        success: true,
         loaded: true,
       },
     }),
@@ -66,6 +66,11 @@ companyDetail.actions.asyncFetchCompanyDetail = data => async dispatch => {
   const [error2, responseBody] = await to(response.json());
   if (error2) {
     return dispatch(companyDetail.actions.fetchFailureCompanyDetail(error2));
+  }
+  if (!response.ok) {
+    return dispatch(
+      companyDetail.actions.fetchFailureCompanyDetail(responseBody)
+    );
   }
 
   dispatch(companyDetail.actions.fetchSuccessCompanyDetail());

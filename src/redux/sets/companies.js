@@ -67,6 +67,9 @@ companies.actions.asyncFetchCompanies = () => async dispatch => {
   if (error2) {
     return dispatch(companies.actions.fetchFailureCompanies(error2));
   }
+  if (!response.ok) {
+    return dispatch(companies.actions.fetchFailureCompanies(responseBody));
+  }
 
   const goodCompanies = responseBody.results.filter(
     company =>

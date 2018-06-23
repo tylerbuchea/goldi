@@ -58,10 +58,17 @@ discover.actions.asyncFetchDiscover = data => async dispatch => {
 
   const url = `/api/v1/discover`;
   const [error1, response] = await to(fetch(url));
-  if (error1) return dispatch(discover.actions.fetchFailureDiscover(error1));
+  if (error1) {
+    return dispatch(discover.actions.fetchFailureDiscover(error1));
+  }
 
   const [error2, responseBody] = await to(response.json());
-  if (error2) return dispatch(discover.actions.fetchFailureDiscover(error2));
+  if (error2) {
+    return dispatch(discover.actions.fetchFailureDiscover(error2));
+  }
+  if (!response.ok) {
+    return dispatch(discover.actions.fetchFailureDiscover(responseBody));
+  }
 
   dispatch(discover.actions.fetchSuccessDiscover());
   dispatch(discover.actions.setDiscover(responseBody));

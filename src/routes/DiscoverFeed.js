@@ -10,9 +10,11 @@ export default class DiscoverFeed extends React.PureComponent {
     this.props.asyncFetchDiscover();
   }
 
+  navTo = id => this.props.history.push(`/company/${id}`);
+
   renderItem = company => (
     <div key={company.id} style={styles.gridItem}>
-      <CompanyCard company={company} />
+      <CompanyCard company={company} navTo={id => this.navTo(id)} />
     </div>
   );
 
@@ -46,7 +48,7 @@ const styles = {
   },
   gridItem: {
     flex: '0 0 auto',
-    maxWidth: 250,
+    maxWidth: 254,
     margin: 10,
   },
 };

@@ -3,15 +3,16 @@ import React from 'react';
 import VideoPlayer from './VideoPlayer';
 
 export default class CompanyCard extends React.PureComponent {
+  navTo = id => this.props.navTo(id);
+
   render() {
     const { company } = this.props;
-    const title = company.name || company.title;
+    const title = company.name || company.title || '';
     const subtitle = company.location || company.subtitle;
-    const imagePlaceholder = `http://via.placeholder.com/96x96?text=${title.slice(
-      0,
-      1
-    )}`;
+    const firstLetter = title.slice(0, 1);
+    const imagePlaceholder = `http://via.placeholder.com/96x96?text=${firstLetter}`;
     const image = company.image || imagePlaceholder;
+    const id = company.id;
 
     return (
       <div className="">
@@ -35,12 +36,15 @@ export default class CompanyCard extends React.PureComponent {
               </div>
             </div>
 
-            <div className="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              nec iaculis mauris. <a href="example.com">example.com</a>
-              <br />
-              <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-            </div>
+            <div className="content">{company.about}</div>
+
+            <button
+              className="button has-background-info has-text-white"
+              onClick={() => this.navTo(id)}
+              style={{ display: 'block', margin: 'auto' }}
+            >
+              Apply
+            </button>
           </div>
         </div>
       </div>
