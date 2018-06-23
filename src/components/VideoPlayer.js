@@ -16,6 +16,7 @@ export default class VideoPlayer extends React.PureComponent {
           controls
           autoPlay
           src={isPlaying ? videoUrl : ''}
+          className={isPlaying ? 'active' : ''}
           type="video/mp4"
         />
         <figure className={`image ${isPlaying ? '' : 'active'}`}>

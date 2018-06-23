@@ -1,11 +1,19 @@
 .video-container {
   position: relative;
+  background: #999;
+  height: 444px;
 }
 
 .video-container video {
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
+  height: 444px;
+}
+
+.video-container video.active {
+  opacity: 1;
 }
 
 .video-container figure {
