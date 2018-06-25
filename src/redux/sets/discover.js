@@ -33,8 +33,8 @@ const discover = createSet(
     FETCH_FAILURE_DISCOVER: (state, action) => ({
       ...state,
       state: {
-        loading: true,
-        error: false,
+        loading: false,
+        error: true,
         success: false,
         loaded: true,
         message: action.payload,
@@ -43,9 +43,9 @@ const discover = createSet(
     FETCH_SUCCESS_DISCOVER: (state, action) => ({
       ...state,
       state: {
-        loading: true,
+        loading: false,
         error: false,
-        success: false,
+        success: true,
         loaded: true,
       },
     }),
@@ -69,6 +69,9 @@ discover.actions.asyncFetchDiscover = data => async dispatch => {
   if (!response.ok) {
     return dispatch(discover.actions.fetchFailureDiscover(responseBody));
   }
+
+  const goodCompanies = responseBody.results.filter(company => company.image);
+  responseBody.results = goodCompanies;
 
   dispatch(discover.actions.fetchSuccessDiscover());
   dispatch(discover.actions.setDiscover(responseBody));

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with snapshot 1`] = `
+<div
+  className="container"
+>
+  <h1
+    className="title"
+  >
+    Apply  
+    <div
+      className="fas fa-spinner fa-spin"
+    />
+  </h1>
+</div>
+`;

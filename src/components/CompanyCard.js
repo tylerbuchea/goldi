@@ -3,31 +3,32 @@ import React from 'react';
 import VideoPlayer from './VideoPlayer';
 
 export default class CompanyCard extends React.PureComponent {
-  navTo = id => this.props.navTo(id);
-
   render() {
-    const { company } = this.props;
-    const title = company.name || company.title || '';
-    const subtitle = company.location || company.subtitle;
+    const {
+      videoUrl,
+      videoStill,
+      logo,
+      title,
+      subtitle,
+      about,
+      onDetail,
+    } = this.props;
+
     const firstLetter = title.slice(0, 1);
     const imagePlaceholder = `http://via.placeholder.com/96x96?text=${firstLetter}`;
-    const image = company.image || imagePlaceholder;
-    const id = company.id;
+    const finalLogo = logo || imagePlaceholder;
 
     return (
       <div className="">
         <div className="card">
           <div className="card-image">
-            <VideoPlayer
-              videoUrl={company.binary}
-              videoStill={company.video_still}
-            />
+            <VideoPlayer videoUrl={videoUrl} videoStill={videoStill} />
           </div>
           <div className="card-content">
             <div className="media">
               <div className="media-left">
                 <figure className="image is-48x48">
-                  <img src={image} alt="company" />
+                  <img src={finalLogo} alt="company" />
                 </figure>
               </div>
               <div className="media-content">
@@ -36,11 +37,11 @@ export default class CompanyCard extends React.PureComponent {
               </div>
             </div>
 
-            <div className="content">{company.about}</div>
+            <div className="content">{about}</div>
 
             <button
               className="button has-background-info has-text-white"
-              onClick={() => this.navTo(id)}
+              onClick={onDetail}
               style={{ display: 'block', margin: 'auto' }}
             >
               Apply

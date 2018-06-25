@@ -80,7 +80,7 @@ companies.actions.asyncFetchCompanies = () => async dispatch => {
   );
   responseBody.results = goodCompanies;
   dispatch(companies.actions.fetchSuccessCompanies());
-  dispatch(companies.actions.setCompanies(responseBody));
+  return dispatch(companies.actions.setCompanies(responseBody));
 };
 
 export default companies;

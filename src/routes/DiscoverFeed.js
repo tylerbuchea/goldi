@@ -10,13 +10,23 @@ export default class DiscoverFeed extends React.PureComponent {
     this.props.asyncFetchDiscover();
   }
 
-  navTo = id => this.props.history.push(`/company/${id}`);
+  navToDetail = id => this.props.history.push(`/company/${id}`);
 
-  renderItem = company => (
-    <div key={company.id} style={styles.gridItem}>
-      <CompanyCard company={company} navTo={id => this.navTo(id)} />
-    </div>
-  );
+  renderItem = discover => {
+    return (
+      <div key={discover.id} style={styles.gridItem}>
+        <CompanyCard
+          videoUrl={discover.binary}
+          videoStill={discover.video_still}
+          logo={discover.image}
+          title={discover.title}
+          subtitle={discover.subtitle}
+          about={discover.about}
+          onDetail={() => this.navToDetail(discover.action.id)}
+        />
+      </div>
+    );
+  };
 
   render() {
     const { discover } = this.props;
@@ -26,9 +36,9 @@ export default class DiscoverFeed extends React.PureComponent {
       <div className="container">
         <h1 className="title">
           Discover &nbsp;
-          {discover.state.loaded || <div className="fas fa-spinner fa-spin" />}
+          {discover.state.loading && <div className="fas fa-spinner fa-spin" />}
         </h1>
-        <div className="companies" style={styles.grid}>
+        <div style={styles.grid}>
           {discoverList.map(this.renderItem)}
           {discover.state.error && (
             <h2>There was an issue retrieving listings.</h2>

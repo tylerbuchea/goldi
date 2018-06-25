@@ -10,20 +10,36 @@
   left: 0;
   opacity: 0;
   height: 444px;
+  cursor: pointer;
 }
 
 .video-container video.active {
   opacity: 1;
 }
 
-.video-container figure {
+.video-container .overlay {
+  position: relative;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   cursor: pointer;
 }
 
-.video-container figure.active {
+.video-container .overlay.active {
   pointer-events: all;
   opacity: 1;
+}
+
+.video-container .play-button {
+  position: absolute;
+  top: 48.3%;
+  left: 49.1%;
+  font-size: 18px;
+  transform: translate(-50%, -60%);
+  border-radius: 50%;
+  width: 57px;
+  height: 57px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  padding-right: 1px;
 }

@@ -1,0 +1,517 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with snapshot 1`] = `
+<div
+  className="container"
+>
+  <h1
+    className="title"
+  >
+    Discover  
+    <div
+      className="fas fa-spinner fa-spin"
+    />
+  </h1>
+  <div
+    style={
+      Object {
+        "alignItems": "flex-start",
+        "display": "flex",
+        "flexWrap": "wrap",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "flex": "0 0 auto",
+          "margin": 10,
+          "maxWidth": 254,
+        }
+      }
+    >
+      <div
+        className=""
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-image"
+          >
+            <div
+              className="video-container"
+            >
+              <video
+                autoPlay={true}
+                className=""
+                controls={true}
+                src=""
+                type="video/mp4"
+              />
+              <div
+                className="overlay active"
+                onClick={[Function]}
+              >
+                <figure
+                  className="image"
+                >
+                  <img
+                    alt="company"
+                    src="https://goldi-develop.s3.amazonaws.com/media/Splash_Hero_v1_TRANSCODED_eAMhFY8.jpg"
+                  />
+                </figure>
+                <button
+                  className="play-button fa fa-play"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="card-content"
+          >
+            <div
+              className="media"
+            >
+              <div
+                className="media-left"
+              >
+                <figure
+                  className="image is-48x48"
+                >
+                  <img
+                    alt="company"
+                    src="http://via.placeholder.com/96x96?text=F"
+                  />
+                </figure>
+              </div>
+              <div
+                className="media-content"
+              >
+                <p
+                  className="title is-4"
+                >
+                  Fourth
+                </p>
+                <p
+                  className="subtitle is-6"
+                >
+                  NY
+                </p>
+              </div>
+            </div>
+            <div
+              className="content"
+            />
+            <button
+              className="button has-background-info has-text-white"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                  "margin": "auto",
+                }
+              }
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "flex": "0 0 auto",
+          "margin": 10,
+          "maxWidth": 254,
+        }
+      }
+    >
+      <div
+        className=""
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-image"
+          >
+            <div
+              className="video-container"
+            >
+              <video
+                autoPlay={true}
+                className=""
+                controls={true}
+                src=""
+                type="video/mp4"
+              />
+              <div
+                className="overlay active"
+                onClick={[Function]}
+              >
+                <figure
+                  className="image"
+                >
+                  <img
+                    alt="company"
+                    src="https://goldi-develop.s3.amazonaws.com/media/IMG_1035_WKMrk5D.jpg"
+                  />
+                </figure>
+                <button
+                  className="play-button fa fa-play"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="card-content"
+          >
+            <div
+              className="media"
+            >
+              <div
+                className="media-left"
+              >
+                <figure
+                  className="image is-48x48"
+                >
+                  <img
+                    alt="company"
+                    src="https://goldi-develop.s3.amazonaws.com/media/18882125_1887932188131321_1471609003697882282_n.png.96x96_q100_2x.jpg"
+                  />
+                </figure>
+              </div>
+              <div
+                className="media-content"
+              >
+                <p
+                  className="title is-4"
+                >
+                  Programadores de Chile
+                </p>
+                <p
+                  className="subtitle is-6"
+                >
+                  Santiago, Chile
+                </p>
+              </div>
+            </div>
+            <div
+              className="content"
+            />
+            <button
+              className="button has-background-info has-text-white"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                  "margin": "auto",
+                }
+              }
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "flex": "0 0 auto",
+          "margin": 10,
+          "maxWidth": 254,
+        }
+      }
+    >
+      <div
+        className=""
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-image"
+          >
+            <div
+              className="video-container"
+            >
+              <video
+                autoPlay={true}
+                className=""
+                controls={true}
+                src=""
+                type="video/mp4"
+              />
+              <div
+                className="overlay active"
+                onClick={[Function]}
+              >
+                <figure
+                  className="image"
+                >
+                  <img
+                    alt="company"
+                    src="https://goldi-develop.s3.amazonaws.com/media/HERO_mwWmZqz_RkcDJ1f.jpg"
+                  />
+                </figure>
+                <button
+                  className="play-button fa fa-play"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="card-content"
+          >
+            <div
+              className="media"
+            >
+              <div
+                className="media-left"
+              >
+                <figure
+                  className="image is-48x48"
+                >
+                  <img
+                    alt="company"
+                    src="https://goldi-develop.s3.amazonaws.com/media/m-nd_logo_square.jpg.96x96_q100_2x.jpg"
+                  />
+                </figure>
+              </div>
+              <div
+                className="media-content"
+              >
+                <p
+                  className="title is-4"
+                >
+                  M-ND
+                </p>
+                <p
+                  className="subtitle is-6"
+                >
+                  NYC
+                </p>
+              </div>
+            </div>
+            <div
+              className="content"
+            />
+            <button
+              className="button has-background-info has-text-white"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                  "margin": "auto",
+                }
+              }
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "flex": "0 0 auto",
+          "margin": 10,
+          "maxWidth": 254,
+        }
+      }
+    >
+      <div
+        className=""
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-image"
+          >
+            <div
+              className="video-container"
+            >
+              <video
+                autoPlay={true}
+                className=""
+                controls={true}
+                src=""
+                type="video/mp4"
+              />
+              <div
+                className="overlay active"
+                onClick={[Function]}
+              >
+                <figure
+                  className="image"
+                >
+                  <img
+                    alt="company"
+                    src="https://goldi-develop.s3.amazonaws.com/media/HERO_AC5Lplc.jpg"
+                  />
+                </figure>
+                <button
+                  className="play-button fa fa-play"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="card-content"
+          >
+            <div
+              className="media"
+            >
+              <div
+                className="media-left"
+              >
+                <figure
+                  className="image is-48x48"
+                >
+                  <img
+                    alt="company"
+                    src="https://goldi-develop.s3.amazonaws.com/media/celonis_square_logo.png.96x96_q100_2x.jpg"
+                  />
+                </figure>
+              </div>
+              <div
+                className="media-content"
+              >
+                <p
+                  className="title is-4"
+                >
+                  Celonis
+                </p>
+                <p
+                  className="subtitle is-6"
+                >
+                  NYC
+                </p>
+              </div>
+            </div>
+            <div
+              className="content"
+            />
+            <button
+              className="button has-background-info has-text-white"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                  "margin": "auto",
+                }
+              }
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "flex": "0 0 auto",
+          "margin": 10,
+          "maxWidth": 254,
+        }
+      }
+    >
+      <div
+        className=""
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-image"
+          >
+            <div
+              className="video-container"
+            >
+              <video
+                autoPlay={true}
+                className=""
+                controls={true}
+                src=""
+                type="video/mp4"
+              />
+              <div
+                className="overlay active"
+                onClick={[Function]}
+              >
+                <figure
+                  className="image"
+                >
+                  <img
+                    alt="company"
+                    src="https://goldi-develop.s3.amazonaws.com/media/company_video_Z5EKf3N.jpg"
+                  />
+                </figure>
+                <button
+                  className="play-button fa fa-play"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            className="card-content"
+          >
+            <div
+              className="media"
+            >
+              <div
+                className="media-left"
+              >
+                <figure
+                  className="image is-48x48"
+                >
+                  <img
+                    alt="company"
+                    src="https://goldi-develop.s3.amazonaws.com/media/BLENDER_LOGO_WEB_BLACK-02.png.96x96_q100_2x.png"
+                  />
+                </figure>
+              </div>
+              <div
+                className="media-content"
+              >
+                <p
+                  className="title is-4"
+                >
+                  Blender Workspace
+                </p>
+                <p
+                  className="subtitle is-6"
+                >
+                  New York City, NY.
+                </p>
+              </div>
+            </div>
+            <div
+              className="content"
+            />
+            <button
+              className="button has-background-info has-text-white"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                  "margin": "auto",
+                }
+              }
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -19,9 +19,16 @@ export default class VideoPlayer extends React.PureComponent {
           className={isPlaying ? 'active' : ''}
           type="video/mp4"
         />
-        <figure className={`image ${isPlaying ? '' : 'active'}`}>
-          <img src={videoStill} onClick={this.play} alt="company" />
-        </figure>
+
+        <div
+          className={`overlay ${isPlaying ? '' : 'active'}`}
+          onClick={this.play}
+        >
+          <figure className="image">
+            <img src={videoStill} alt="company" />
+          </figure>
+          <button className="play-button fa fa-play" />
+        </div>
       </div>
     );
   }

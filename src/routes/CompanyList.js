@@ -7,16 +7,26 @@ import CompanyCard from '../components/CompanyCard';
 @redux()
 export default class CompanyList extends React.PureComponent {
   componentDidMount() {
-    this.props.asyncFetchCompanies();
+    return this.props.asyncFetchCompanies();
   }
 
-  navTo = id => this.props.history.push(`/company/${id}`);
+  navToDetail = id => this.props.history.push(`/company/${id}`);
 
-  renderItem = company => (
-    <div key={company.id} style={styles.gridItem}>
-      <CompanyCard company={company} navTo={id => this.navTo(id)} />
-    </div>
-  );
+  renderItem = company => {
+    return (
+      <div key={company.id} style={styles.gridItem}>
+        <CompanyCard
+          videoUrl={company.binary}
+          videoStill={company.video_still}
+          logo={company.image}
+          title={company.name}
+          subtitle={company.location}
+          about={company.about}
+          onDetail={() => this.navToDetail(company.id)}
+        />
+      </div>
+    );
+  };
 
   render() {
     const { companies } = this.props;
@@ -26,9 +36,11 @@ export default class CompanyList extends React.PureComponent {
       <div className="container">
         <h1 className="title">
           Browse &nbsp;
-          {companies.state.loaded || <div className="fas fa-spinner fa-spin" />}
+          {companies.state.loading && (
+            <div className="fas fa-spinner fa-spin" />
+          )}
         </h1>
-        <div className="companies" style={styles.grid}>
+        <div style={styles.grid}>
           {companiesList.map(this.renderItem)}
           {companies.state.error && (
             <h2>There was an issue retrieving listings.</h2>

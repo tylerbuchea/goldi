@@ -42,14 +42,12 @@ export default class CompanyDetail extends React.PureComponent {
       <div className="container">
         <h1 className="title">
           Apply &nbsp;
-          {companyDetail.state.loaded || (
+          {companyDetail.state.loading && (
             <div className="fas fa-spinner fa-spin" />
           )}
         </h1>
 
-        {companyDetail.state.loaded &&
-          companyDetail.state.success &&
-          this.renderDetails(companyDetail.data)}
+        {companyDetail.state.success && this.renderDetails(companyDetail.data)}
         {companyDetail.state.error && (
           <h2>Sorry this company does not exist!</h2>
         )}
